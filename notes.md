@@ -1,12 +1,13 @@
-
+# Notes
 
 ## Encoding Binary data in DNA
 
+```
 00 A (Adenine)
 01 G (Guanine)
 10 C (Cytosine)
 11 T (Thymine)
-
+```
 
 ## Articles
 
