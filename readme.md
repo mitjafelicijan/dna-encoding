@@ -29,9 +29,13 @@ Binary representation of every byte is translated into DNA by encoding the follo
 11    T    Thymine     color.RGBA{255, 255, 0, 255}
 ```
 
+[![asciicast](https://asciinema.org/a/EvfFa4n7Cr9DVzbw4HNaY5323.svg)](https://asciinema.org/a/EvfFa4n7Cr9DVzbw4HNaY5323 | width=100)
+
 ### fasta-to-image
 
 Takes FASTA file which is outputed from dna-encoder and creates PNG image.
+
+[![asciicast](https://asciinema.org/a/VJmaBdoYp5sgZelqESi96MU4S.svg)](https://asciinema.org/a/VJmaBdoYp5sgZelqESi96MU4S | width=100)
 
 ## Example with normal text file
 
