@@ -30,3 +30,10 @@
 - https://mafft.cbrc.jp/alignment/software/
 - http://www.storing-data-into-living-plant.net/decoding
 - https://standaloneinstaller.com/blog/big-list-of-sample-videos-for-testers-124.html
+
+## Database engine (nucleotide databases)
+- https://www.technologyreview.com/s/419624/how-to-build-a-better-dna-search-engine/
+- https://www.hindawi.com/journals/mbi/2011/475718/
+- https://www.sciencedirect.com/topics/medicine-and-dentistry/dna-database
+- https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch
+- http://www.oxfordjournals.org/nar/database/subcat/1/2
