@@ -23,10 +23,10 @@ Takes a file (binary or non-binary) and encodes it to DNA sequence.
 Binary representation of every byte is translated into DNA by encoding the following.
 
 ```
-00 A (Adenine) color.RGBA{0, 0, 255, 255}
-01 G (Guanine) color.RGBA{0, 100, 0, 255}
-10 C (Cytosine) color.RGBA{255, 0, 0, 255}
-11 T (Thymine) color.RGBA{255, 255, 0, 255}
+00   A   Adenine    color.RGBA{0, 0, 255, 255}
+01   G   Guanine    color.RGBA{0, 100, 0, 255}
+10   C   Cytosine   color.RGBA{255, 0, 0, 255}
+11   T   Thymine    color.RGBA{255, 255, 0, 255}
 ```
 
 ### fasta-to-image
