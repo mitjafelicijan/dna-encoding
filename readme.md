@@ -1,3 +1,59 @@
 # DNA Sequencing tools
 
 Tools to help sequence and visualize binary and non-binary files.
+
+The nucleotide in DNA consists of a sugar (deoxyribose), one of four bases (cytosine (C), thymine (T), adenine (A), guanine (G)), and a phosphate. Cytosine and thymine are pyrimidine bases, while adenine and guanine are purine bases. The sugar and the base together are called a nucleoside.
+
+**Table of contents**
+
+- [Included tools](#included-tools)
+  - [dna-encoder](#dna-encoder)
+  - [fasta-to-image](#fasta-to-image)
+
+## Included tools
+
+- dna-encoder
+- fasta-to-image
+
+### dna-encoder
+
+Takes a file (binary or non-binary) and encodes it to DNA sequence.
+
+Binary representation of every byte is translated into DNA by encoding the following.
+
+```
+00 A (Adenine)
+01 G (Guanine)
+10 C (Cytosine)
+11 T (Thymine)
+```
+
+### fasta-to-image
+
+Takes FASTA file which is outputed from dna-encoder and creates PNG image.
+
+**Original**
+
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et consectetur turpis. Integer quis pharetra turpis. Donec dui mauris, dignissim eu elementum nec, euismod id orci.
+```
+
+**FASTA file**
+
+```fasta
+>SEQ1
+GAAGCGACGCGGGCGACAAGCCGGAAGAGGGGCGACAAGCGAGCGCAGCGACACAAGAGC
+CGGGAACAAGCAGGCGGCGGGGAACAACAAGCAGCGCCGAGCGGGCAGGAGCGGGGAGGG
+GACACAAGCAGGCGAGCCGGAAGCCGGAGCAGCCGGCCGCGACAAGCGGGCAGCCGGGAA
+CCACAAGAGAGGGGCCGGAACAAGCGGGGAACAAGCAGCGCCGAGCGGGCAGGAGCGGGG
+AGGGGACACAAGGAGGGGACGAAGCCGGAACCACAAGACGGCCGGAGCGGGCGGCGGGAC
+ACAAGAGGGGGCCGGAACAAGAAGCCAGCAGGACGCGGGGAGACGCAGACAAGGAGGGGA
+CGAAGCCGGAACCACAAGAGAGCGCCGCGGGCAACAAGCGAGGGGCCGACAAGCGGCAGG
+GGGACGCCGGAACAACAAGCGAGCCGGCGGCCGCCGGAGAGCCGGCGACAAGCGGGGGAC
+AAGCGGGCAGCGGGCGGCGGGCCGGAGGGGCGACAAGCCGCGGGCAACAACAAGCGGGGG
+GCCGGAGCGGCGCGAACAAGCCGGCGAACAAGCGACGCAGCCGACC
+```
+
+**Encoded into image**
+
+![dna](https://user-images.githubusercontent.com/296714/50626024-22e63280-0f2c-11e9-8d86-7f75d35b1804.png)
