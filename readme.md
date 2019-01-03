@@ -29,7 +29,7 @@ Binary representation of every byte is translated into DNA by encoding the follo
 11    T    Thymine     color.RGBA{255, 255, 0, 255}
 ```
 
-[![asciicast](https://asciinema.org/a/EvfFa4n7Cr9DVzbw4HNaY5323.svg){:height="50%" width="50%"}](https://asciinema.org/a/EvfFa4n7Cr9DVzbw4HNaY5323)
+[![asciicast](https://asciinema.org/a/EvfFa4n7Cr9DVzbw4HNaY5323.svg)](https://asciinema.org/a/EvfFa4n7Cr9DVzbw4HNaY5323)
 
 ### fasta-to-image
 
