@@ -1,5 +1,5 @@
 default:
-	@echo "Use 'make linux' or 'make darwin'"
+	@echo "Use 'make linux' or 'make darwin'!"
 
 linux:
 	cd dna-encoder && make build-linux
