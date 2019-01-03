@@ -9,15 +9,20 @@ import (
 	"time"
 
 	"github.com/pkg/profile"
+	kingpin "gopkg.in/alecthomas/kingpin.v2"
 	pb "gopkg.in/cheggaaa/pb.v1"
 )
 
 var (
-	input   = flag.String("i", "", "Input file")
-	output  = flag.String("o", "out.fa", "Output file")
-	seqName = flag.String("seq", "SEQ1", "Sequence name")
-	columns = flag.Int("col", 60, "Characters by column")
-	pprof   = flag.Bool("profile", false, "Output profile pprof")
+	appName = "dnae-encode"
+	version = "0.0.1"
+
+	app     = kingpin.New(appName, "A command-line application that encodes file into DNA sequence.")
+	input   = app.Flag("input", "Input file (ASCII or binary) which will be encoded into DNA sequence.").PlaceHolder("INPUT").Required().Short('i').String()
+	output  = app.Flag("output", "Output file which stores DNA sequence in FASTA format.").Short('o').Default("out.fa").String()
+	seqName = app.Flag("sequence", "The description line (defline) or header/identifier line, gives a name and/or a unique identifier for the sequence.").PlaceHolder("SEQ1").Short('s').Default("SEQ1").String()
+	columns = app.Flag("columns", "Row characters length (no more than 120 characters). Devices preallocate fixed line sizes in software.").PlaceHolder("60").Short('c').Default("60").Int()
+	pprof   = app.Flag("pprof", "Generates pprof file for profiling and debugging purposes.").Short('p').Bool()
 )
 
 func min(a, b int) int {
@@ -42,15 +47,19 @@ func byteCountDecimal(b int64) string {
 
 func main() {
 
-	flag.Parse()
+	app.Version(fmt.Sprintf("%s %s", appName, version))
+	kingpin.MustParse(app.Parse(os.Args[1:]))
 
 	if *pprof {
 		defer profile.Start(profile.CPUProfile, profile.ProfilePath("."), profile.NoShutdownHook).Stop()
 	}
 
-	start := time.Now()
+	if *input == "" {
+		flag.PrintDefaults()
+		os.Exit(1)
+	}
 
-	log.Println("Gathering input file's stats")
+	start := time.Now()
 
 	file, err := os.Open(*input)
 	if err != nil {
@@ -58,6 +67,8 @@ func main() {
 		return
 	}
 	defer file.Close()
+
+	log.Println("Gathering input file's stats")
 
 	fi, err := file.Stat()
 	if err != nil {
