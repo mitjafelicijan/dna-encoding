@@ -9,6 +9,7 @@ The nucleotide in DNA consists of a sugar (deoxyribose), one of four bases (cyto
 - [Included tools](#included-tools)
   - [dna-encoder](#dna-encoder)
   - [fasta-to-image](#fasta-to-image)
+- [Example with normal text file](#example-with-normal-text-file)
 
 ## Included tools
 
@@ -31,6 +32,8 @@ Binary representation of every byte is translated into DNA by encoding the follo
 ### fasta-to-image
 
 Takes FASTA file which is outputed from dna-encoder and creates PNG image.
+
+## Example with normal text file
 
 **Original**
 
