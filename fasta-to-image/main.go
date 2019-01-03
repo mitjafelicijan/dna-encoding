@@ -13,7 +13,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pkg/profile"
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
 	pb "gopkg.in/cheggaaa/pb.v1"
 )
@@ -42,7 +41,6 @@ var (
 	input    = app.Flag("input", "Input FASTA file which will be encoded into PNG image.").PlaceHolder("INPUT").Required().Short('i').String()
 	output   = app.Flag("output", "Output file in PNG format that represents DNA sequence in graphical way.").Short('o').Default("out.png").String()
 	rectSize = app.Flag("size", "Size of pairings of DNA bases on image in pixels (lower resolution lower file size).").PlaceHolder("10").Short('s').Default("10").Int()
-	pprof    = app.Flag("pprof", "Generates pprof file for profiling and debugging purposes.").Short('p').Bool()
 )
 
 func byteCountDecimal(b int64) string {
@@ -62,10 +60,6 @@ func main() {
 
 	app.Version(fmt.Sprintf("%s %s", appName, version))
 	kingpin.MustParse(app.Parse(os.Args[1:]))
-
-	if *pprof {
-		defer profile.Start(profile.CPUProfile, profile.ProfilePath("."), profile.NoShutdownHook).Stop()
-	}
 
 	if *input == "" {
 		flag.PrintDefaults()

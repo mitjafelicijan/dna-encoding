@@ -8,7 +8,6 @@ import (
 	"os"
 	"time"
 
-	"github.com/pkg/profile"
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
 	pb "gopkg.in/cheggaaa/pb.v1"
 )
@@ -22,7 +21,6 @@ var (
 	output  = app.Flag("output", "Output file which stores DNA sequence in FASTA format.").Short('o').Default("out.fa").String()
 	seqName = app.Flag("sequence", "The description line (defline) or header/identifier line, gives a name and/or a unique identifier for the sequence.").PlaceHolder("SEQ1").Short('s').Default("SEQ1").String()
 	columns = app.Flag("columns", "Row characters length (no more than 120 characters). Devices preallocate fixed line sizes in software.").PlaceHolder("60").Short('c').Default("60").Int()
-	pprof   = app.Flag("pprof", "Generates pprof file for profiling and debugging purposes.").Short('p').Bool()
 )
 
 func min(a, b int) int {
@@ -49,10 +47,6 @@ func main() {
 
 	app.Version(fmt.Sprintf("%s %s", appName, version))
 	kingpin.MustParse(app.Parse(os.Args[1:]))
-
-	if *pprof {
-		defer profile.Start(profile.CPUProfile, profile.ProfilePath("."), profile.NoShutdownHook).Stop()
-	}
 
 	if *input == "" {
 		flag.PrintDefaults()
