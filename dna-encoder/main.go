@@ -93,7 +93,7 @@ func main() {
 				sequence = append(sequence, 'G')
 			} else if binary[element] == 49 && binary[element+1] == 48 {
 				sequence = append(sequence, 'C')
-			} else if binary[element] == 48 && binary[element+1] == 49 {
+			} else if binary[element] == 49 && binary[element+1] == 49 {
 				sequence = append(sequence, 'T')
 			}
 		}
